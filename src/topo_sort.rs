@@ -37,7 +37,6 @@ pub fn kahn_topological_sort(nodes: Vec<Node>) -> Result<Vec<Node>, DagError> {
         .map(|id| (id.clone(), Vec::new()))
         .collect();
 
-    // Build graph edges from dependency -> node.
     for (id, node) in &node_by_id {
         for dep in &node.dependencies {
             if node_by_id.contains_key(dep) {

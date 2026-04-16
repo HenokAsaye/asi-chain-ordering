@@ -1,14 +1,6 @@
-mod errors;
-mod graph;
-mod merge;
-mod node;
-mod topo_sort;
-
-use graph::t_ordering_linearize;
-use node::Node;
+use asi_chain_ordering::{Node, t_ordering_linearize};
 
 fn main() {
-    // Example DAGs from two sources.
     let dag_a = vec![
         Node::new("A", vec![], 100, true),
         Node::new("B", vec!["A"], 101, true),
